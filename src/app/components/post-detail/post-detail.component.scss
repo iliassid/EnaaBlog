@@ -1,0 +1,50 @@
+.newSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    margin-top: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 60%;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(244, 240, 239);
+}
+.comments{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.textpart{
+    border-radius: 10px;
+    width: 350px;
+    height: 200px;
+}
+.commtitle{
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.commentsAdded{
+    background-color: rgb(210, 214, 214);
+    width: 80%;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid rgb(80, 80, 80);
+    margin: 10px;
+}
+.commentsElem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.comelem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
