@@ -1,29 +1,32 @@
 {
-  "posts": [
+  "article": [
     {
       "id": 1,
-      "title": "JSON-Server",
-      "author": "Amit"
+      "titre":"Sport",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2h-tS6byfC0TrKL21UOlSV4A7IMHvK2sog&s",
+      "Description": "Le sport est une activité physique ou mentale, individuelle ou collective, généralement soumise à des règles, qui vise à améliorer la condition physique, développer des compétences, ou procurer du plaisir ou de la compétition.",
+      "Categorie": "Foot-basketBall-Golf"
     },
     {
       "id": 2,
-      "title": "Node.js",
-      "author": "Mohit"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "Great post!",
-      "postId": 1
+      "titre":"Sport",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2h-tS6byfC0TrKL21UOlSV4A7IMHvK2sog&s",
+      "Description": "Le sport est une activité physique ou mentale, individuelle ou collective, généralement soumise à des règles, qui vise à améliorer la condition physique, développer des compétences, ou procurer du plaisir ou de la compétition.",
+      "Categorie": "Foot-basketBall-Golf"
     },
     {
-      "id": 2,
-      "body": "Informative!",
-      "postId": 2
+      "id": 3,
+      "titre":"Sport",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2h-tS6byfC0TrKL21UOlSV4A7IMHvK2sog&s",
+      "Description": "Le sport est une activité physique ou mentale, individuelle ou collective, généralement soumise à des règles, qui vise à améliorer la condition physique, développer des compétences, ou procurer du plaisir ou de la compétition.",
+      "Categorie": "Foot-basketBall-Golf"
+    },
+    {
+      "id": 4,
+      "titre":"Sport",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2h-tS6byfC0TrKL21UOlSV4A7IMHvK2sog&s",
+      "Description": "Le sport est une activité physique ou mentale, individuelle ou collective, généralement soumise à des règles, qui vise à améliorer la condition physique, développer des compétences, ou procurer du plaisir ou de la compétition.",
+      "Categorie": "Foot-basketBall-Golf"
     }
-  ],
-  "profile": {
-    "name": "Amit Kumar"
-  }
+  ]
 }

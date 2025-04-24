@@ -48,3 +48,21 @@
   </div>
 </div>
 
+<div class="post-content" *ngFor="let article of Article">
+  <h2 class="post-title">JavaScript : Astuces pour les débutants</h2>
+  <div class="post-meta">
+    <span class="author">{{article.titre}}</span>
+    <span>•</span>
+    <span><img src="{{article.image}}"></span>
+  </div>
+  <p class="post-excerpt">
+  {{article.Description}}
+  </p>
+  <div>
+    <span class="tag">{{article.Categorie}}</span>
+  </div>
+  <a href="#" class="read-more">Lire l'article</a>
+  <button class="btn btn-outline-dark" (click)="onDeleteArticle(article.id)">Delete</button>
+  <button class="btn btn-outline-dark" (click)="onEditArticle()">Edite</button>
+
+</div>
