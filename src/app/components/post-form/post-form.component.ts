@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PostService} from '../../services/post.service';
 
 @Component({
   selector: 'app-post-form',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
   templateUrl: './post-form.component.html',
   styleUrl: './post-form.component.scss'
 })
-export class PostFormComponent {
+export class PostFormComponent implements OnInit{
+
+
+  constructor(private articleService : PostService) {
+  }
+
+  ngOnInit(): void {
+
+  }
+
 
 }
