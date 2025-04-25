@@ -22,5 +22,8 @@ export class PostService {
   deleteArticle(id:any):Observable<any>{
     return this.http.delete(`http://localhost:3000/article/${id}`)
   }
+  PostDataById(id:string){
+
+  }
 
 }

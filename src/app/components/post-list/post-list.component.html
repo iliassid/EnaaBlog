@@ -5,13 +5,21 @@
   <header>
     <h1>Nos Dernières Publications</h1>
     <p class="subtitle">Découvrez nos articles sur les technologies web</p>
-    <input class="mt-5" type="search" placeholder="search by title">
+    <input class="mt-5 mb-5" type="search" placeholder="search by title"><br>
+    <button  (click)="selectCategories='sport'">sport</button>
+    <button (click)="selectCategories='FOOD'">food</button>
+    <button (click)="selectCategories='social'">social</button>
+    <button (click)="selectCategories='music'">music</button>
+    <button (click)="selectCategories=''">All</button>
+
   </header>
 
   <div class="posts-grid">
     <!-- Article 1 -->
     <article class="post-card" *ngFor="let article of Article">
-        <img [src]="article.Image">
+      <ng-container *ngIf="(!selectCategories) || article.Categorie === selectCategories">
+
+      <img [src]="article.Image">
 
       <div class="post-content">
         <h2 class="post-title"> {{article.Titre}}</h2>
@@ -27,9 +35,11 @@
           <span class="tag">{{article.Categorie}}</span>
         </div>
         <a href="#" class="read-more">Lire l'article</a>
-      </div>
-    </article>
 
+      </div>
+    </ng-container>
+
+    </article>
 
   </div>
 </div>
