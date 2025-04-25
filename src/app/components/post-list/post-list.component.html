@@ -5,7 +5,7 @@
   <header>
     <h1>Nos Dernières Publications</h1>
     <p class="subtitle">Découvrez nos articles sur les technologies web</p>
-    <input class="mt-5 mb-5" type="search" placeholder="search by title"><br>
+    <input class="mt-5 mb-5" type="search" [(ngModel)]="searchByTitle"  placeholder="search by title"><br>
     <button  (click)="selectCategories='sport'">sport</button>
     <button (click)="selectCategories='FOOD'">food</button>
     <button (click)="selectCategories='social'">social</button>
@@ -15,9 +15,8 @@
   </header>
 
   <div class="posts-grid">
-    <!-- Article 1 -->
     <article class="post-card" *ngFor="let article of Article">
-      <ng-container *ngIf="(!selectCategories) || article.Categorie === selectCategories">
+      <ng-container *ngIf="(!selectCategories || article.Categorie === selectCategories ) && (!searchByTitle|| article.Titre.toLowerCase().includes(searchByTitle.toLowerCase()))">
 
       <img [src]="article.Image">
 

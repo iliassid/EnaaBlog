@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {DatePipe, NgForOf, NgIf} from '@angular/common';
 import {PostService} from '../../services/post.service';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-post-list',
@@ -10,7 +11,8 @@ import {PostService} from '../../services/post.service';
     RouterLink,
     DatePipe,
     NgForOf,
-    NgIf
+    NgIf,
+    FormsModule
   ],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.scss'
