@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {PostService} from '../../services/post.service';
-import {JsonPipe, NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
+import {CommonModule, JsonPipe, NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 import {Article} from '../../Model/article.model';
 import {FormsModule} from '@angular/forms';
+import {CommandModule} from '@angular/cli/src/command-builder/command-module';
 
 
 
@@ -14,14 +15,16 @@ import {FormsModule} from '@angular/forms';
     NgForOf,
     NgIf,
     FormsModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    CommonModule,
+
   ],
   templateUrl: './post-form.component.html',
   styleUrl: './post-form.component.scss'
 })
 export class PostFormComponent implements OnInit{
-  Article : any = []
-  article : Article={
+  Article : any[] = []
+  article ={
     Titre : '',
     Image : '',
     Description : '',
@@ -33,11 +36,9 @@ export class PostFormComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.onAllData();
-    this.onAddArticle();
-
-
+    this.onAllData()
   }
+
   onAddArticle(){
       this.articleService.addArticle(this.article).subscribe(articleadd => {
         console.log(articleadd)
@@ -45,8 +46,8 @@ export class PostFormComponent implements OnInit{
           this.onAllData();
         }
       })
-
   }
+
 
   onEditArticle() {
     let conformeedit = confirm("Wax mt2kad baghi  dire modification ?")

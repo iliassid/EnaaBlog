@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Article} from '../Model/article.model';
 
 
 @Injectable({
@@ -14,13 +13,13 @@ export class PostService {
   getData():Observable<any>{
     return this.http.get<any>("http://localhost:3000/article");
   }
-  addArticle(body : Article){
-    return this.http.post("http://localhost:3000/article",body)
+  addArticle(postData:any):Observable<any>{
+    return this.http.post("http://localhost:3000/article",postData)
 }
-  editArticle(body : Article){
-    return this.http.put("http://localhost:3000/article"+ body.id,body)
+  editArticle(edittData : any):Observable<any>{
+    return this.http.put("http://localhost:3000/article"+ edittData.id,edittData)
   }
-  deleteArticle(id:any){
+  deleteArticle(id:any):Observable<any>{
     return this.http.delete(`http://localhost:3000/article/${id}`)
   }
 
