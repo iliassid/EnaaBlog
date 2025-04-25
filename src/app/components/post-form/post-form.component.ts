@@ -28,7 +28,8 @@ export class PostFormComponent implements OnInit{
     Titre : '',
     Image : '',
     Description : '',
-    Categorie : ''
+    Categorie : '',
+    date:new Date()
 
   }
  onClose :any;

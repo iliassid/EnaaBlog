@@ -1,239 +1,36 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Tech - Nos Dernières Publications</title>
-  <style>
-    :root {
-      --primary: #4361ee;
-      --secondary: #3f37c9;
-      --accent: #4895ef;
-      --dark: #1b263b;
-      --light: #f8f9fa;
-      --gray: #6c757d;
-    }
 
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f2f5;
-      color: #333;
-    }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    h1 {
-      color: var(--dark);
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      display: inline-block;
-    }
-
-    .subtitle {
-      color: var(--gray);
-      font-size: 1.1rem;
-    }
-
-    .posts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .post-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .post-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    }
-
-    .post-image {
-      height: 200px;
-      background-color: var(--accent);
-      background-image: linear-gradient(135deg, var(--primary), var(--accent));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .post-content {
-      padding: 1.5rem;
-    }
-
-    .post-title {
-      color: var(--dark);
-      margin: 0 0 1rem 0;
-      font-size: 1.4rem;
-    }
-
-    .post-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    .post-meta .author {
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .post-excerpt {
-      color: var(--gray);
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    .read-more {
-      display: inline-flex;
-      align-items: center;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-
-    .read-more:hover {
-      color: var(--secondary);
-    }
-
-    .read-more::after {
-      content: '→';
-      margin-left: 0.5rem;
-      transition: transform 0.2s ease;
-    }
-
-    .read-more:hover::after {
-      transform: translateX(3px);
-    }
-
-    .tag {
-      display: inline-block;
-      background-color: #e9ecef;
-      color: var(--dark);
-      padding: 0.3rem 0.8rem;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      margin-right: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .posts-grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
-</head>
-<body>
 <div class="container">
-  
+
   <header>
     <h1>Nos Dernières Publications</h1>
     <p class="subtitle">Découvrez nos articles sur les technologies web</p>
+    <input class="mt-5" type="search" placeholder="search by title">
   </header>
 
   <div class="posts-grid">
     <!-- Article 1 -->
-    <article class="post-card">
-      <div class="post-image" style="background-image: linear-gradient(135deg, #4361ee, #4cc9f0);">
-        HTML
-      </div>
+    <article class="post-card" *ngFor="let article of Article">
+        <img [src]="article.Image">
+
       <div class="post-content">
-        <h2 class="post-title">Comment apprendre le HTML facilement</h2>
+        <h2 class="post-title"> {{article.Titre}}</h2>
         <div class="post-meta">
           <span class="author">Idriss Mikdame</span>
           <span>•</span>
-          <span>20 avril 2025</span>
+          <span>{{article.date}}</span>
         </div>
         <p class="post-excerpt">
-          Le HTML est le langage de base pour créer des pages web. Dans cet article, nous explorons les meilleures méthodes pour maîtriser ce langage rapidement et efficacement.
+          {{article.Description}}
         </p>
         <div>
-          <span class="tag">Débutant</span>
-          <span class="tag">Frontend</span>
+          <span class="tag">{{article.Categorie}}</span>
         </div>
         <a href="#" class="read-more">Lire l'article</a>
       </div>
     </article>
 
-    <!-- Article 2 -->
-    <article class="post-card">
-      <div class="post-image" style="background-image: linear-gradient(135deg, #7209b7, #b5179e);">
-        CSS
-      </div>
-      <div class="post-content">
-        <h2 class="post-title">Les nouveautés CSS en 2025</h2>
-        <div class="post-meta">
-          <span class="author">Gamrani Omayma</span>
-          <span>•</span>
-          <span>15 avril 2025</span>
-        </div>
-        <p class="post-excerpt">
-          Le CSS continue d'évoluer avec de nouvelles fonctionnalités passionnantes. Découvrez les dernières innovations qui révolutionnent la création de sites web modernes.
-        </p>
-        <div>
-          <span class="tag">Avancé</span>
-          <span class="tag">Design</span>
-        </div>
-        <a href="#" class="read-more">Lire l'article</a>
-      </div>
-    </article>
 
-    <!-- Article 3 -->
-    <article class="post-card">
-      <div class="post-image" style="background-image: linear-gradient(135deg, #f72585, #b5179e);">
-        JS
-      </div>
-      <div class="post-content">
-        <h2 class="post-title">JavaScript : Astuces pour les débutants</h2>
-        <div class="post-meta">
-          <span class="author">Ilias Sidqui</span>
-          <span>•</span>
-          <span>10 avril 2025</span>
-        </div>
-        <p class="post-excerpt">
-          JavaScript peut sembler intimidant au début, mais avec ces astuces simples et pratiques, vous serez en mesure de créer des interactions dynamiques sur vos sites web.
-        </p>
-        <div>
-          <span class="tag">Débutant</span>
-          <span class="tag">Interactivité</span>
-        </div>
-        <a href="#" class="read-more">Lire l'article</a>
-      </div>
-    </article>
   </div>
 </div>
-</body>
-</html>
+
