@@ -9,8 +9,4 @@ export const routes: Routes = [
     {path:"post-detail",component:PostDetailComponent},
     {path:"post-list",component:PostListComponent},
     {path:"post-form",component:PostFormComponent},
-
-
-
-
 ];
