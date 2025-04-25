@@ -6,7 +6,7 @@ import { PostFormComponent } from './components/post-form/post-form.component';
 
 export const routes: Routes = [
     {path:"home",component:HomeComponent},
-    {path:"post-detail",component:PostDetailComponent},
+  {path:"post-detail/:id",loadComponent : () => import('./components/post-detail/post-detail.component').then(E =>E.PostDetailComponent)},
     {path:"post-list",component:PostListComponent},
     {path:"post-form",component:PostFormComponent},
 ];

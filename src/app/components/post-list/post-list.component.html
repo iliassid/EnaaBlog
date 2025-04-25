@@ -33,7 +33,7 @@
         <div>
           <span class="tag">{{article.Categorie}}</span>
         </div>
-        <a href="#" class="read-more">Lire l'article</a>
+        <a href="#" class="read-more"  [routerLink]="['/post-detail',article.id]" >Lire l'article</a>
 
       </div>
     </ng-container>

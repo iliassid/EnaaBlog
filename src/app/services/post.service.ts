@@ -9,21 +9,23 @@ import {Observable} from 'rxjs';
 export class PostService {
 
   constructor(private http : HttpClient) { }
+  private url="http://localhost:3000/article"
 
   getData():Observable<any>{
-    return this.http.get<any>("http://localhost:3000/article");
+    return this.http.get<any>(this.url);
   }
   addArticle(postData:any):Observable<any>{
-    return this.http.post("http://localhost:3000/article",postData)
-}
+    return this.http.post(this.url,postData)
+  }
+  PostDataById(id:string):Observable<any>{
+    return this.http.get<any>(`${this.url}/${id}`)
+  }
   editArticle(edittData : any):Observable<any>{
     return this.http.put("http://localhost:3000/article"+ edittData.id,edittData)
   }
   deleteArticle(id:any):Observable<any>{
     return this.http.delete(`http://localhost:3000/article/${id}`)
   }
-  PostDataById(id:string){
 
-  }
 
 }
