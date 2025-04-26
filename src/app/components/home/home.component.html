@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <section class="theSection">
 <div class="aprocontent">
     <h1>à propos de nous</h1>
@@ -6,31 +7,33 @@
 <div>
     <h1>articles récents</h1>
 </div>
-<div class="theContent">
-<div class="articls">
-    <h3>titre</h3>
-    <img src="assets/test-patterns-wallpaper-preview.jpg" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure error debitis quis distincti</p>
-    <button class="thebtn">voir plus</button>
-</div>
-<div class="articls">
-    <h3>titre</h3>
-    <img src="assets/test-patterns-wallpaper-preview.jpg" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure error debitis quis distincti</p>
-    <button class="thebtn">voir plus</button>
-</div>
-<div class="articls">
-    <h3>titre</h3>
-    <img src="assets/test-patterns-wallpaper-preview.jpg" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure error debitis quis distincti</p>
-    <button class="thebtn">voir plus</button>
-</div>
-<div class="articls">
-    <h3>titre</h3>
-    <img src="assets/test-patterns-wallpaper-preview.jpg" alt="">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure error debitis quis distincti</p>
-    <button class="thebtn">voir plus</button>
-</div>
-</div>
+  <div class="posts-grid">
+    <article class="post-card" *ngFor="let article of Article | slice:0:3">
+      <ng-container *ngIf="(!selectCategories || article.Categorie === selectCategories ) && (!searchByTitle|| article.Titre.toLowerCase().includes(searchByTitle.toLowerCase()))">
+
+        <img [src]="article.Image">
+
+        <div class="post-content">
+          <h2 class="post-title"> {{article.Titre}}</h2>
+          <div class="post-meta">
+            <span class="author">Idriss Mikdame</span>
+            <span>•</span>
+            <span>{{article.date}}</span>
+          </div>
+          <p class="post-excerpt">
+            {{article.Description}}
+          </p>
+          <div>
+            <span class="tag">{{article.Categorie}}</span>
+          </div>
+          <a href="#" class="read-more"  [routerLink]="['/post-detail',article.id]" >Lire l'article</a>
+
+        </div>
+      </ng-container>
+
+    </article>
+
+  </div>
+
 
 </section>

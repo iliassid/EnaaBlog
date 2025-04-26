@@ -4,6 +4,7 @@ import {CommonModule, JsonPipe, NgForOf, NgIf, NgOptimizedImage} from '@angular/
 import {Article} from '../../Model/article.model';
 import {FormsModule} from '@angular/forms';
 import {CommandModule} from '@angular/cli/src/command-builder/command-module';
+import {NavbarComponent} from '../navbar/navbar.component';
 
 
 
@@ -17,6 +18,7 @@ import {CommandModule} from '@angular/cli/src/command-builder/command-module';
     FormsModule,
     NgOptimizedImage,
     CommonModule,
+    NavbarComponent,
 
   ],
   templateUrl: './post-form.component.html',

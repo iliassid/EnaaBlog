@@ -1,5 +1,4 @@
-
-
+<app-navbar></app-navbar>
 <div class="container">
 
   <header>
@@ -15,7 +14,7 @@
   </header>
 
   <div class="posts-grid">
-    <article class="post-card" *ngFor="let article of Article">
+    <article class="post-card" *ngFor="let article of Article ">
       <ng-container *ngIf="(!selectCategories || article.Categorie === selectCategories ) && (!searchByTitle|| article.Titre.toLowerCase().includes(searchByTitle.toLowerCase()))">
 
       <img [src]="article.Image">

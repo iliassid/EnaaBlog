@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {DatePipe, NgForOf, NgIf} from '@angular/common';
+import {DatePipe, NgForOf, NgIf, SlicePipe} from '@angular/common';
 import {PostService} from '../../services/post.service';
 import {FormsModule} from '@angular/forms';
+import {NavbarComponent} from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-post-list',
@@ -12,7 +13,9 @@ import {FormsModule} from '@angular/forms';
     DatePipe,
     NgForOf,
     NgIf,
-    FormsModule
+    FormsModule,
+    SlicePipe,
+    NavbarComponent
   ],
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.scss'

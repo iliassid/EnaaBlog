@@ -1,0 +1,22 @@
+<form [formGroup]="loginFormgroup">
+  <div class="card mt-5">
+    <div class="card-header">
+      <h1>Authentication</h1>
+    </div>
+    <div class="card-body">
+    <label class="mb-3" >Email address</label>
+    <input type="text" class="form-control"  placeholder="Enter email" formControlName="username">
+
+
+    <label class="mt-4 mb-3">Password</label>
+    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+
+  <div class="d-flex justify-content-center mt-3">
+    <button
+      (click)="login()"
+      type="submit" class="btn btn-primary">Login</button>
+  </div>
+  </div>
+  </div>
+</form>
+

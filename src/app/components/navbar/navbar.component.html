@@ -26,5 +26,9 @@
         </li>
       </ul>
     </div>
+    <button class="btn btn-success" *ngIf="authService.authenticated==true">
+      {{authService.username}}
+    </button>
+    <button (click)="logout()" class="btn btn-danger ms-3">Logout</button>
   </div>
 </nav>
