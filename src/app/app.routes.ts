@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { PostDetailComponent } from './components/post-detail/post-detail.component';
+//import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 import {LoginComponent} from './components/login/login.component';

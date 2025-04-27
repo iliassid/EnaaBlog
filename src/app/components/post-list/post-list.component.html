@@ -33,7 +33,7 @@
           <span class="tag">{{article.Categorie}}</span>
         </div>
         <a href="#" class="read-more"  [routerLink]="['/post-detail',article.id]" >Lire l'article</a>
-
+        <br><button  ><i  class="bi bi-pencil-square text-success"></i></button> <button (click)="onDeleteArticle(article.id)"><i class="bi bi-trash3 text-danger"></i></button>
       </div>
     </ng-container>
 

@@ -5,6 +5,7 @@ import {Article} from '../../Model/article.model';
 import {FormsModule} from '@angular/forms';
 import {CommandModule} from '@angular/cli/src/command-builder/command-module';
 import {NavbarComponent} from '../navbar/navbar.component';
+import {Router} from '@angular/router';
 
 
 
@@ -13,10 +14,7 @@ import {NavbarComponent} from '../navbar/navbar.component';
   selector: 'app-post-form',
   standalone: true,
   imports: [
-    NgForOf,
-    NgIf,
     FormsModule,
-    NgOptimizedImage,
     CommonModule,
     NavbarComponent,
 
@@ -34,32 +32,22 @@ export class PostFormComponent implements OnInit{
     date:new Date()
 
   }
- onClose :any;
-  constructor(private articleService : PostService) {
+  constructor(private articleService : PostService,private router:Router) {
   }
 
   ngOnInit(): void {
     this.onAllData()
+
   }
 
   onAddArticle(){
       this.articleService.addArticle(this.article).subscribe(articleadd => {
         console.log(articleadd)
         if (articleadd) {
+          this.router.navigateByUrl('/post-list')
           this.onAllData();
         }
       })
-  }
-
-
-  onEditArticle() {
-    let conformeedit = confirm("Wax mt2kad baghi  dire modification ?")
-    if (conformeedit){
-      this.articleService.editArticle(this.article).subscribe(articleedit=>{
-        console.log(articleedit)
-        this.onClose(articleedit)
-      })
-    }
   }
 
   onAllData(){
@@ -68,23 +56,9 @@ export class PostFormComponent implements OnInit{
       console.log(AllData)
 
     })
+
+
   }
 
 
-
-  onDeleteArticle(articleId:number) {
-    let confirmDelete = confirm('Wache nta Mt2kad ?')
-    if (confirmDelete){
-      console.log(confirmDelete)
-      this.articleService.deleteArticle(articleId).subscribe(Delete =>{
-        if (Delete){
-          this.onAllData();
-        }
-        console.log(Delete)
-
-      },err => console.log(err))
-    }else {
-      console.log(confirmDelete)
-    }
-  }
 }
